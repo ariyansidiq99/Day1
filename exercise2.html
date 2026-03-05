@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Form validation">
+    <title>Form Validation</title>
+</head>
+<body>
+    <main>
+        <h1>Form Validation</h1>
+        <form action="/contact" method="POST" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div>
+                    <label for="full-name">Full Name <span aria-label="required">*</span></label>
+                    <input 
+                    type="text" 
+                    id="full-name" 
+                    name="full-name" 
+                    autocomplete="name"
+                    aria-describedby="name-hint"
+                    required
+                    />
+                    <span id="name-hint">Please enter your full name</span>
+                </div>
+                <div>
+                    <label for="email">Email Address <span aria-label="required">*</span></label>
+                    <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    aria-describedby="email-hint"
+                    required
+                    />
+                    <span id="email-hint">Please enter your email address</span>
+                </div>
+                <div>
+                    <label for="phone">Phone Number <span aria-label="required">*</span>
+                    </label>
+                    <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="phone"
+                    aria-describedby="phone-hint"
+                    required
+                    />
+                    <span id="phone-hint">Please enter your phone number</span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Subject</legend>
+                <div>
+                    <label for="subject">subject <span aria-label="required">*</span></label>
+                    <select id="subject" name="subject">
+                        <option value="">Choose a subject</option>
+                        <option value="question">Question</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="support">Support</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Message <span aria-label="required">*</span></label>
+                    <textarea id="message" name="message" rows="6" required minlength="20" maxlength="120" aria-describedby="message-cont">
+                    </textarea>
+                    <span id="message-cont">Please enter your message minimum 20 characters and maximum 120 characters</span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div>
+                    <label>
+                    <input type="checkbox" name="newslatter" value="yes" required >
+                Subscribe to our newsletter
+                </label>
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+</body>
+</html>
